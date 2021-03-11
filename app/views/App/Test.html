@@ -1,0 +1,32 @@
+{{set . "title" "Test GET request"}}
+{{template "header.html" .}}
+
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+      <h1><a href="/">Home</a><br />Test GET request</h1>
+	  
+      <p>
+		<form action="/proceed">
+			<label for="fname">First name:</label><br>
+			<input type="text" id="fname" name="fname" value="John"><br>
+			<label for="lname">Last name:</label><br>
+			<input type="text" id="lname" name="lname" value="Doe"><br><br>
+			<input type="submit" value="Submit">
+		</form> 
+	  </p>
+    </div>
+  </div>
+  <h6>Edit this file in app/views/App/Test.html</h6>
+  <h6>Controller: app/controllers/app.go : func (c App) Test()</h6>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}
