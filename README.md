@@ -1,6 +1,6 @@
 # GOlang
-[Get it] (https://golang.org/dl/)
-[To get started with syntax] (https://www.tutorialspoint.com/go/index.htm)
+* [Get it] (https://golang.org/dl)
+* [To get started with syntax] (https://www.tutorialspoint.com/go/index.htm)
 ## Writing down sample HTTP server
 Simply put that file `http.go` anywhere:
 ```
