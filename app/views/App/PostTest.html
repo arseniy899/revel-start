@@ -1,0 +1,66 @@
+{{set . "title" "Test GET request"}}
+{{template "header.html" .}}
+<script>
+function send(){
+	const xhr = new XMLHttpRequest();
+	// listen for `load` event
+	xhr.onload = () => {
+		// print JSON response
+		if (xhr.status >= 200 && xhr.status < 300) 
+		{
+			// parse JSON
+			const response = JSON.parse(xhr.responseText);
+			console.log(response);
+			alert("The sum is: "+response.result.sum);
+		}
+	};
+	// create a JSON object
+	const json = {
+		"a": parseInt(document.getElementById("sumValA").value),
+		"b": parseInt(document.getElementById("sumValB").value)
+	};
+	// open request
+	xhr.open('POST', '/post-json-test-result');
+	// set `Content-Type` header
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	// send rquest with JSON payload
+	xhr.send(JSON.stringify(json));
+}
+
+</script>
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+      <h1><a href="/">Home</a><br />Test GET request</h1>
+	  
+      <p>
+		Calculate the sum!
+		<form id="form">
+			<label for="sumValA">First value:</label><br>
+			<input type="text" id="sumValA" value="5"><br>
+			<label for="sumValB">Second value:</label><br>
+			<input type="text" id="sumValB" value="8"><br><br>
+			<input type="submit" value="Submit">
+		</form> 
+	  </p>
+    </div>
+  </div>
+  <h6>Edit this file in app/views/App/PostTest.html</h6>
+  <h6>Controller: app/controllers/app.go : func (c App) PostTest()</h6>
+  
+</header>
+<script>
+document.querySelector("#form").addEventListener("submit", function(e){
+	e.preventDefault();    //stop form from submitting
+    send();
+});
+</script>
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}

@@ -1,4 +1,4 @@
-module my-app
+module revel-start
 
 go 1.15
 

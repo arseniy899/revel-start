@@ -8,8 +8,10 @@ module:testrunner
 
 
 GET     /                                       App.Index
-GET     /test                                   App.Test
-GET     /proceed                                App.Proceed
+GET     /test-get                               App.GetTest
+GET     /get-test-proceed                       App.GetTestResult
+GET	    /post-json-test                  		App.PostTest
+POST    /post-json-test-result                  App.SumJSON
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
