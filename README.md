@@ -1,6 +1,6 @@
 # GOlang
-* [Get it] (https://golang.org/dl)
-* [To get started with syntax] (https://www.tutorialspoint.com/go/index.htm)
+* [Get it](https://golang.org/dl)
+* [To get started with syntax](https://www.tutorialspoint.com/go/index.htm)
 ## Writing down sample HTTP server
 Simply put that file `http.go` anywhere:
 ```
@@ -33,7 +33,7 @@ func main() {
     http.ListenAndServe(":81", nil)
 }
 ```
-Start it up: `go run http-servers.go`
+Start it up: `go run http.go`
 # More complex 
 [Compairing the most top web frameworks](https://nordicapis.com/7-frameworks-to-build-a-rest-api-in-go/)
 ## Revel
